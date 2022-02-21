@@ -59,4 +59,4 @@ process.on('uncaughtException',(err) => {
         },
     }]})
 });
-client.login("Nzk2Njg3MTMyMDMzOTQxNTA3.X_bitg.fyfJblwh-Y00O7iw5SYqZYaGR0k")
+client.login("")
