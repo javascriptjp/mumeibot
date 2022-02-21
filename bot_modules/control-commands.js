@@ -4,13 +4,17 @@ const Modules = {
     CreateChannel : require("./control-command/create-channel.js"),
     DeleteChannel : require("./control-command/delete-channel.js"),
     FetchMessage : require("./control-command/fetch-message.js"),
+    KickMember : require("./control-command/kick-member.js"),
+    BanMember : require("./control-command/ban-member.js")
 }
 module.exports = async (command,args,message,Discord,client,config,NpIiD) => {
     if(!message.member.permissions.has("ADMINISTRATOR"))return Modules.NoPermission(message)
-    if(command=="s!help")Modules.CommandsHelp(message)
-    if(command=="s!create-channel")Modules.CreateChannel(args,message,config)
-    if(command=="s!cc")Modules.CreateChannel(args,message,config)
-    if(command=="s!delete-channel")Modules.DeleteChannel(message)
-    if(command=="s!dc")Modules.DeleteChannel(message)
-    if(command=="s!fetch")Modules.FetchMessage(message,args)
+    if(command=="s!help")return Modules.CommandsHelp(message)
+    if(command=="s!create-channel")return Modules.CreateChannel(args,message,config)
+    if(command=="s!cc")return Modules.CreateChannel(args,message,config)
+    if(command=="s!delete-channel")return Modules.DeleteChannel(message)
+    if(command=="s!dc")return Modules.DeleteChannel(message)
+    if(command=="s!fetch")return Modules.FetchMessage(message,args)
+    if(command=="s!kick")return Modules.KickMember(message,args)
+    if(command=="s!ban")return Modules.BanMember(message,args)
 }

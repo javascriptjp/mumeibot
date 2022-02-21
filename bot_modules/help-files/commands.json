@@ -8,5 +8,20 @@
         "name":"`delete-channel #<channel-name>`",
         "value":"チャンネルを削除します\n`s!dc`でも同じコマンドが使えます",
         "inline": true
+    },
+    {
+        "name":"`fetch`",
+        "value":"過去`400`件までのメッセージのログを取得します",
+        "inline": true
+    },
+    {
+        "name":"`kick @<Member>`",
+        "value":"指定したメンバーを`kick`します",
+        "inline": true
+    },
+    {
+        "name":"`ban @<Member>`",
+        "value":"指定したメンバーを`ban`します",
+        "inline": true
     }
 ]

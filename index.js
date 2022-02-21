@@ -10,11 +10,13 @@ const Modules = {
     threadlogger : require("./bot_modules/threadlogger"),
     voicelogger : require("./bot_modules/voicelogger.js"),
     editlogger : require("./bot_modules/editlogger.js"),
-    ControlCommand : require("./bot_modules/control-commands.js")
+    ControlCommand : require("./bot_modules/control-commands.js"),
+    AntiSpam : require("./bot_modules/AntiSpam.ins/AntiSpam.v2.js")
 }
 
 client.on("messageCreate",async message=>{
     if(message.author.bot)return
+    //if(Modules.AntiSpam(message))return
     if(!message.author.bot)Modules.logger(message)
     const [command, ...args] = message.content.split(/(?:"([^"]+)"|([^ ]+)) ?/).filter(e => e)
     Modules.ControlCommand(command, args, message, Discord, client, config, now_code)
