@@ -25,7 +25,7 @@ client.on("messageCreate",async message=>{
     }
     if(!message.author.bot)Modules.logger(message)
     const [command, ...args] = message.content.split(/(?:"([^"]+)"|([^ ]+)) ?/).filter(e => e)
-    if (message.content.startsWith("s!")){
+    if (message.content.startsWith("a!")){
         Modules.ControlCommand(command, args, message, Discord, client, config, now_code)
     }
 })
