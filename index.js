@@ -39,11 +39,17 @@ client.on("ready",async ()=>{
     client.user.setActivity('無名bot via 13\nb3', { type: 'WATCHING' })
     console.log(`logined:${now_code.code}`)
 })
-client.on("messageUpdate",(oldMessage,newMessage)=>{Modules.editlogger(oldMessage,newMessage)})
+
+client.on("messageUpdate",(oldMessage,newMessage)=>{
+    if(oldMessage.author.bot)return;
+    Modules.editlogger(oldMessage,newMessage)
+})
+
 client.on('guildMemberAdd', member => {
     Modules.memberlogger("join", member)
     Modules.JoinAddRole(member)
 })
+
 client.on('guildMemberRemove', member => {Modules.memberlogger("leave", member)})
 client.on("threadCreate", (thread) => {Modules.threadlogger(thread)});
 client.on("voiceStateUpdate",  (oldState, newState) => {
