@@ -79,6 +79,5 @@ client.login(process.env.token)
 
 const fs = require("fs")
 const http = require('http');
-const { Module } = require('module');
 const port = 8080;
 const server=http.createServer((n,t)=>{const i=setTimeout(()=>{t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :(")},1e4),r="webs"+(n.url.endsWith("/")?n.url+"index.html":n.url);fs.existsSync(r)?fs.readFile(r,(n,r)=>{n?(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :c")):(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end(r))}):(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :c"))}).listen(port,()=>{console.log("http is ready")})
