@@ -23,5 +23,15 @@
         "name":"`ban @<Member>`",
         "value":"指定したメンバーを`ban`します",
         "inline": true
+    },
+    {
+        "name":"`warn @<Member>`",
+        "value":"指定したメンバーを`warn`します",
+        "inline": true
+    },
+    {
+        "name":"`unwarn @<Member>`",
+        "value":"指定したメンバーを`unwarn`します",
+        "inline": true
     }
 ]
