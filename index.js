@@ -65,6 +65,7 @@ client.on("voiceStateUpdate",  (oldState, newState) => {
         if(oldState.channelId !=null && newState.channelId === null)Modules.voicelogger("disconnect",newState.member,oldState.channel,true)
     }
 });
+
 process.on('uncaughtException',(err) => {
     if(now_code.online){
         client.channels.cache.get(config.errorChannel).send({embeds: [{
