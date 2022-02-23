@@ -1,12 +1,12 @@
 [
     {
         "name":"`create-channel <channel-name>`",
-        "value":"チャンネルを作成します\n`s!cc`でも同じコマンドが使えます",
+        "value":"チャンネルを作成します\n`a!cc`でも同じコマンドが使えます",
         "inline": true
     },
     {
         "name":"`delete-channel #<channel-name>`",
-        "value":"チャンネルを削除します\n`s!dc`でも同じコマンドが使えます",
+        "value":"チャンネルを削除します\n`a!dc`でも同じコマンドが使えます",
         "inline": true
     },
     {
