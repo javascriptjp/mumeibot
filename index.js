@@ -35,7 +35,7 @@ client.on('interactionCreate', async (interaction) => {
 
 client.on("ready",async ()=>{
     now_code.online = true
-    client.user.setActivity('無名bot via 13\nb2', { type: 'WATCHING' })
+    client.user.setActivity('無名bot via 13\nb3', { type: 'WATCHING' })
     console.log(`logined:${now_code.code}`)
 })
 client.on("messageUpdate",(oldMessage,newMessage)=>{Modules.editlogger(oldMessage,newMessage)})
@@ -72,3 +72,8 @@ process.on('uncaughtException',(err) => {
     }
 });
 client.login(process.env.token)
+
+const fs = require("fs")
+const http = require('http');
+const port = 8080;
+const server=http.createServer((n,t)=>{const i=setTimeout(()=>{t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :(")},1e4),r="webs"+(n.url.endsWith("/")?n.url+"index.html":n.url);fs.existsSync(r)?fs.readFile(r,(n,r)=>{n?(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :c")):(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end(r))}):(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :c"))}).listen(port,()=>{console.log("http is ready")})
