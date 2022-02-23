@@ -13,7 +13,7 @@ module.exports = (type, member, channel, state) => {
             },
         }]})
     }else if(type == "disconnect") {
-        member.guild.channels.cache.get(config.joinmessages).send({embeds: [{
+        member.guild.channels.cache.get(config.voicemessages).send({embeds: [{
             color: "79bbff",
             title: member.user.tag,
             description: `\`${member.user.tag}\`が\`${channel.name}\`から退出しました`,
@@ -25,7 +25,7 @@ module.exports = (type, member, channel, state) => {
             },
         }]})
     }else if(type == "selfdeaf") {
-        member.guild.channels.cache.get(config.joinmessages).send({embeds: [{
+        member.guild.channels.cache.get(config.voicemessages).send({embeds: [{
             color: "79bbff",
             title: member.user.tag,
             description: `\`${member.user.tag}\`が\`${channel.name}\`にて${state?"スピーカーミュートしました":"スピーカーミュートを解除しました"}`,
@@ -37,7 +37,7 @@ module.exports = (type, member, channel, state) => {
             },
         }]})
     }else if(type == "selfmute") {
-        member.guild.channels.cache.get(config.joinmessages).send({embeds: [{
+        member.guild.channels.cache.get(config.voicemessages).send({embeds: [{
             color: "79bbff",
             title: member.user.tag,
             description: `\`${member.user.tag}\`が\`${channel.name}\`にて${state?"ミュートしました":"ミュートを解除しました"}`,
@@ -49,7 +49,7 @@ module.exports = (type, member, channel, state) => {
             },
         }]})
     }else if(type == "selfmute") {
-        member.guild.channels.cache.get(config.joinmessages).send({embeds: [{
+        member.guild.channels.cache.get(config.voicemessages).send({embeds: [{
             color: "79bbff",
             title: member.user.tag,
             description: `\`${member.user.tag}\`が\`${channel.name}\`にて${state?"カメラを付けました":"カメラを切りました"}`,
@@ -61,7 +61,7 @@ module.exports = (type, member, channel, state) => {
             },
         }]})
     }else if(type == "serverdeaf") {
-        member.guild.channels.cache.get(config.joinmessages).send({embeds: [{
+        member.guild.channels.cache.get(config.voicemessages).send({embeds: [{
             color: "79bbff",
             title: member.user.tag,
             description: `\`${member.user.tag}\`が\`${channel.name}\`にて${state?"サーバーからスピーカーミュートされました":"サーバーからのスピーカーミュートが解除されました"}`,
@@ -73,7 +73,7 @@ module.exports = (type, member, channel, state) => {
             },
         }]})
     }else if(type == "servermute") {
-        member.guild.channels.cache.get(config.joinmessages).send({embeds: [{
+        member.guild.channels.cache.get(config.voicemessages).send({embeds: [{
             color: "79bbff",
             title: member.user.tag,
             description: `\`${member.user.tag}\`が\`${channel.name}\`にて${state?"サーバーからミュートされました":"サーバーからのミュートが解除されました"}`,

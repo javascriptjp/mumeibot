@@ -13,7 +13,8 @@ const Modules = {
     editlogger : require("./bot_modules/editlogger.js"),
     ControlCommand : require("./bot_modules/control-commands.js"),
     AntiSpam : require("./bot_modules/AntiSpam.ins/AntiSpam.v2.js"),
-    GetPermission : require("./bot_modules/functions/get-permissions.js")
+    GetPermission : require("./bot_modules/functions/get-permissions.js"),
+    JoinAddRole : require("./bot_modules/join-add-role.js")
 }
 
 client.on("messageCreate",async message=>{
@@ -39,7 +40,10 @@ client.on("ready",async ()=>{
     console.log(`logined:${now_code.code}`)
 })
 client.on("messageUpdate",(oldMessage,newMessage)=>{Modules.editlogger(oldMessage,newMessage)})
-client.on('guildMemberAdd', member => {Modules.memberlogger("join", member)})
+client.on('guildMemberAdd', member => {
+    Modules.memberlogger("join", member)
+    Modules.JoinAddRole(member)
+})
 client.on('guildMemberRemove', member => {Modules.memberlogger("leave", member)})
 client.on("threadCreate", (thread) => {Modules.threadlogger(thread)});
 client.on("voiceStateUpdate",  (oldState, newState) => {
@@ -75,5 +79,6 @@ client.login(process.env.token)
 
 const fs = require("fs")
 const http = require('http');
+const { Module } = require('module');
 const port = 8080;
 const server=http.createServer((n,t)=>{const i=setTimeout(()=>{t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :(")},1e4),r="webs"+(n.url.endsWith("/")?n.url+"index.html":n.url);fs.existsSync(r)?fs.readFile(r,(n,r)=>{n?(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :c")):(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end(r))}):(clearTimeout(i),t.writeHead(200,{"Content-Type":"text/html"}),t.end("error :c"))}).listen(port,()=>{console.log("http is ready")})
