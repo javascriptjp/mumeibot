@@ -25,5 +25,5 @@ module.exports = async (command,args,message,Discord,client,config,NpIiD) => {
     if(command=="a!warn")return Modules.WarnMember(message)
     if(command=="a!unwarn")return Modules.UnwarnMember(message)
     if(command=="a!gr")return Modules.GetReg(message,args)
-    if(command=="a!reboot")return Modules.GetReg(message)
+    if(command=="a!reboot")return Modules.BotReboot(message)
 }
