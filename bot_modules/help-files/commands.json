@@ -35,8 +35,8 @@
         "inline": true
     },
     {
-        "name":"`gr <Reg> <kick|ban>`",
-        "value":"Regで指定したメンバーを一斉`Kick`|`Ban`します",
+        "name":"`gr <Reg> <kick|ban|warn|unwarn>`",
+        "value":"RegExpで指定したメンバーを一斉`Kick`|`Ban`|`Warn`します",
         "inline": true
     },
     {
