@@ -11,7 +11,7 @@ module.exports = async(message,args = []) => {
             message.channel.send({embeds: [{
                 color: "79bbff",
                 title: "Kicked member",
-                description: `<@${member.id}>は\`Kick\`されました`,
+                description: `<@${Gmember.id}>は\`Kick\`されました`,
                 timestamp: new Date(),
                 footer: {
                     icon_url: message.guild.iconURL(),
@@ -28,7 +28,7 @@ module.exports = async(message,args = []) => {
             message.channel.send({embeds: [{
                 color: "79bbff",
                 title: "Kicked member",
-                description: `<@${member.id}>は\`Kick\`されました`,
+                description: `<@${Gmember.id}>は\`Kick\`されました`,
                 timestamp: new Date(),
                 footer: {
                     icon_url: message.guild.iconURL(),
@@ -44,7 +44,7 @@ module.exports = async(message,args = []) => {
             message.channel.send({embeds: [{
                 color: "79bbff",
                 title: "Get user info",
-                description: `<@${member.id}>`,
+                description: `<@${Gmember.id}>`,
                 timestamp: new Date(),
                 footer: {
                     icon_url: message.guild.iconURL(),
