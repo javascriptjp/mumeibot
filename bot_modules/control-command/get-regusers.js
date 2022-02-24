@@ -1,4 +1,4 @@
 module.exports = async(message,args) => {
     const GettedUser = await message.guild.members.fetch()
-    console.log()
+    console.log(GettedUser)
 }
