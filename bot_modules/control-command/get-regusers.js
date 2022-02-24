@@ -1,5 +1,4 @@
-module.exports = (message,args) => {
-    message.guild.fetch().filter(i=>{
-        console.log(i)
-    })
+module.exports = async(message,args) => {
+    const GettedUser = await message.guild.fetch().filter()
+    console.log(GettedUser)
 }
