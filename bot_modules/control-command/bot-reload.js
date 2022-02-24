@@ -1,4 +1,4 @@
-module.exports = async(message,args) => {
+module.exports = async(message) => {
     message.channel.send({embeds: [{
         color: "79bbff",
         title: "`Rebooting bot`",

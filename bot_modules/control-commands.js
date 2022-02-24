@@ -8,7 +8,8 @@ const Modules = {
     BanMember : require("./control-command/ban-member.js"),
     WarnMember : require("./control-command/warn-member.js"),
     UnwarnMember : require("./control-command/unwarn-member.js"),
-    GetReg : require("./control-command/get-regusers.js")
+    GetReg : require("./control-command/get-regusers.js"),
+    BotReboot : require("./control-command/bot-reload.js")
 }
 
 module.exports = async (command,args,message,Discord,client,config,NpIiD) => {
@@ -24,4 +25,5 @@ module.exports = async (command,args,message,Discord,client,config,NpIiD) => {
     if(command=="a!warn")return Modules.WarnMember(message)
     if(command=="a!unwarn")return Modules.UnwarnMember(message)
     if(command=="a!gr")return Modules.GetReg(message,args)
+    if(command=="a!reboot")return Modules.GetReg(message)
 }
