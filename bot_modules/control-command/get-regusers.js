@@ -39,6 +39,7 @@ module.exports = async(message,args = []) => {
         return;
     }
     if(args[0]=="get"){
+        message.channel.send(GettedReg.user.username)
         GettedReg.forEach(Get => {
             const Gmember = message.guild.members.fetch(Get.user.id)
             Gmember.ban()
