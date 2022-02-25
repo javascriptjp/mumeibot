@@ -49,7 +49,7 @@ client.on("messageUpdate",(oldMessage,newMessage)=>{
 client.on('guildMemberAdd', member => {
     Modules.memberlogger("join", member)
     Modules.JoinAddRole(member)
-    Modules.JoinToSend(member)
+    Modules.JoinToSend(client,member)
 })
 
 client.on('guildMemberRemove', member => {Modules.memberlogger("leave", member)})
