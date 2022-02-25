@@ -30,7 +30,7 @@ client.on("messageCreate",async message=>{
     if (message.content.startsWith("a!")){
         return Modules.ControlCommand(command, args, message, Discord, client, config, now_code)
     }
-    AddReaction(message)
+    Modules.AddReaction(message)
 })
 
 client.on('interactionCreate', async (interaction) => {
