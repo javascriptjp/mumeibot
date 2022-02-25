@@ -1,7 +1,7 @@
 require('dotenv').config();
 const Discord = require("discord.js")
 const GenUUId = require("./bot_modules/functions/uuidgenerator")
-const config = require("./bot_configs/main.json")
+const config = require("./bot_configs/main.json");
 const options = { intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_VOICE_STATES", "GUILD_MESSAGES", "GUILD_MEMBERS"] };
 const client = new Discord.Client(options)
 const now_code = {code:GenUUId(),online:false}
@@ -14,7 +14,8 @@ const Modules = {
     ControlCommand : require("./bot_modules/control-commands.js"),
     AntiSpam : require("./bot_modules/AntiSpam.ins/AntiSpam.v2.js"),
     GetPermission : require("./bot_modules/functions/get-permissions.js"),
-    JoinAddRole : require("./bot_modules/join-add-role.js")
+    JoinAddRole : require("./bot_modules/join-add-role.js"),
+    JoinToSend : require("./bot_modules/other-modules/join-send-message.js")
 }
 
 client.on("messageCreate",async message=>{
@@ -48,6 +49,7 @@ client.on("messageUpdate",(oldMessage,newMessage)=>{
 client.on('guildMemberAdd', member => {
     Modules.memberlogger("join", member)
     Modules.JoinAddRole(member)
+    Modules.JoinToSend(member)
 })
 
 client.on('guildMemberRemove', member => {Modules.memberlogger("leave", member)})
@@ -82,4 +84,5 @@ process.on('uncaughtException',(err) => {
         console.log(err)
     }
 });
+
 client.login(process.env.token)
