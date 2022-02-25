@@ -8,7 +8,7 @@ module.exports = async (client,member) =>{
         また<#945838590674501642>でルールを確認してお楽しみください!`,
         timestamp: new Date(),
         footer: {
-            icon_url: message.guild.iconURL(),
+            icon_url: member.guild.iconURL(),
             text: "©️無名鯖 | setuna/Soso"
         },
     }]})
