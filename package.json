@@ -9,9 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "npm init -y && npm i --save-dev node@16 && npm config set prefix=$(pwd)/node_modules/node && export PATH=$(pwd)/node_modules/node/bin:$PATH && node ."
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/javascriptjp/mumeibot.git"
@@ -23,8 +22,8 @@
     "url": "https://github.com/javascriptjp/mumeibot/issues"
   },
   "homepage": "https://github.com/javascriptjp/mumeibot#readme",
-  "description": "",
   "devDependencies": {
     "node": "^16.13.2"
-  }
+  },
+  "description": ""
 }

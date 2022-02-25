@@ -1,7 +1,7 @@
 const config = require("./join-send-message.json")
 module.exports = async (member) =>{
-    await client.channels.cache.get(config.channel).send(`<@${member.id}>`)
-    await client.channels.cache.get(config.channel).send({embeds: [{
+    client.channels.cache.get(config.channel).send(`<@${member.id}>`)
+    client.channels.cache.get(config.channel).send({embeds: [{
         color: "79bbff",
         title: `<@${member.id}>さんようこそ無名鯖へ!`,
         description: `<#945853334949093416>へ自己紹介をして参加ください!
