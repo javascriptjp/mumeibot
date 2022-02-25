@@ -15,7 +15,8 @@ const Modules = {
     AntiSpam : require("./bot_modules/AntiSpam.ins/AntiSpam.v2.js"),
     GetPermission : require("./bot_modules/functions/get-permissions.js"),
     JoinAddRole : require("./bot_modules/join-add-role.js"),
-    JoinToSend : require("./bot_modules/other-modules/join-send-message.js")
+    JoinToSend : require("./bot_modules/other-modules/join-send-message.js"),
+    AddReaction : require("./bot_modules/other-modules/react-to-text-fix.js")
 }
 
 client.on("messageCreate",async message=>{
@@ -27,8 +28,9 @@ client.on("messageCreate",async message=>{
     if(!message.author.bot)Modules.logger(message)
     const [command, ...args] = message.content.split(/(?:"([^"]+)"|([^ ]+)) ?/).filter(e => e)
     if (message.content.startsWith("a!")){
-        Modules.ControlCommand(command, args, message, Discord, client, config, now_code)
+        return Modules.ControlCommand(command, args, message, Discord, client, config, now_code)
     }
+    AddReaction(message)
 })
 
 client.on('interactionCreate', async (interaction) => {
