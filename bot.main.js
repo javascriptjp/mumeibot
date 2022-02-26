@@ -16,7 +16,8 @@ const Modules = {
     GetPermission : require("./bot_modules/functions/get-permissions.js"),
     JoinAddRole : require("./bot_modules/join-add-role.js"),
     JoinToSend : require("./bot_modules/other-modules/join-send-message.js"),
-    AddReaction : require("./bot_modules/other-modules/react-to-text-fix.js")
+    AddReaction : require("./bot_modules/other-modules/react-to-text-fix.js"),
+    SendTemplateText : require("./bot_modules/other-modules/send-template-text.js")
 }
 
 client.on("messageCreate",async message=>{
@@ -31,6 +32,7 @@ client.on("messageCreate",async message=>{
         return Modules.ControlCommand(command, args, message, Discord, client, config, now_code)
     }
     Modules.AddReaction(message)
+    Modules.SendTemplateText(message)
 })
 
 client.on('interactionCreate', async (interaction) => {
