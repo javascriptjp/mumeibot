@@ -4,7 +4,7 @@ const config = require("./send-template-text.json")
 module.exports = async message => {
     if(message.channel.id==config.channel){
         if(!message.member.roles.cache.has(config.CheckRole)){
-            message.member.roles.add('690791160024924191')
+            message.member.roles.add(config.CheckRole)
         }
         message.channel.messages.fetch({ before: message.id, limit: 1 })
             .then(async messages => {
