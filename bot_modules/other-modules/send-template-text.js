@@ -1,5 +1,5 @@
 const config = require("./send-template-text.json")
-module.exports = message => {
+module.exports = async message => {
     if(message.channel.id==config.channel){
         const beforeMessage = await message.channel.messages.fetch({ before: message.id, limit: 1 })
             .then(messages => messages.first())
