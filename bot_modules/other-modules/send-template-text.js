@@ -4,7 +4,7 @@ module.exports = async message => {
         message.channel.messages.fetch({ before: message.id, limit: 1 })
             .then(async messages => {
                 const beforeMessage = await messages.first()
-                if(beforeMessage.author.id==config.BotId)return;
+                if(beforeMessage.author.id!==config.BotId)return;
                 await beforeMessage.delete()
                 await message.channel.send({embeds: [{
                     color: "79bbff",
