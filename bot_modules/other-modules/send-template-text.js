@@ -4,8 +4,7 @@ module.exports = async message => {
         message.channel.messages.fetch({ before: message.id, limit: 1 })
             .then(async messages => {
                 const beforeMessage = await messages.first()
-                if(beforeMessage.author.id!==config.BotId)return;
-                await beforeMessage.delete()
+                if(beforeMessage.author.id==config.BotId)beforeMessage.delete();
                 await message.channel.send({embeds: [{
                     color: "79bbff",
                     title: `__自己紹介テンプレート__`,
