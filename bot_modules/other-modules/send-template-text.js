@@ -12,7 +12,7 @@ module.exports = async message => {
                     description: `コピペしてお使いください\`\`\`\n名前:\n性別:\n年齢:\n趣味:\n一言:\n\`\`\``,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: member.guild.iconURL(),
+                        icon_url: message.guild.iconURL(),
                         text: "©️無名鯖 | setuna/Soso"
                     },
                 }]})
