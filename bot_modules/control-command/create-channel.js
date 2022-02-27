@@ -7,13 +7,7 @@ module.exports = async (args,message) => {
         mentionMembers.forEach(id => {
             Permissions.push({
                 "id":id,
-                allow: 'VIEW_CHANNEL'
-            })
-        });
-        mentionRoles.forEach(id => {
-            Permissions.push({
-                "id":id,
-                allow: 'VIEW_CHANNEL'
+                allow: ['VIEW_CHANNEL','SEND_MESSAGES','READ_MESSAGE_HISTORY']
             })
         });
         message.guild.channels.create(args[0], {
